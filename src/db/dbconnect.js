@@ -4,7 +4,7 @@ const pool = mysql.createPool({
 	host: 'sql10.freesqldatabase.com',
 	user: 'sql10717548',
 	password: 'EJ1kZZYwBq',
-	database: '	sql10717548',
+	database: 'sql10717548',
 	port: 3306,
 	waitForConnections: true,
 	connectionLimit: 10,
