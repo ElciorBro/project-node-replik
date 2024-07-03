@@ -18,6 +18,6 @@ const uploadFile = multer({storage})
 // set de controladores aqui
 router.get("/shop", controladores.getProduct);
 
-router.post('/shop', uploadFile.single('image'), controladores.crearProducto)
+router.post('/shop', uploadFile.single('image'), controladores.crearProducto);
 
 module.exports = router;
