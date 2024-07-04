@@ -174,7 +174,7 @@ function createProductCard(product) {
   // Crear sección de "Eliminar"
   const deleteForm = document.createElement('form');
   deleteForm.innerHTML += `
-  <form action="/dinamic?_metodo=DELETE" style="display: flex;" method="post">
+  <form action="/shop?_metodo=DELETE" style="display: flex;" method="post">
     <input type="hidden" name="idDelete" value="${product.id}">
     <button type="submit" class="btn btn-danger btn-sm">Eliminar Producto</button>
   </form>`

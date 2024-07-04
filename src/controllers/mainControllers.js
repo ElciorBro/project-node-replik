@@ -25,6 +25,6 @@ module.exports = {
     deleteProduct: async (req, res) => {
         console.log(req.body);
         const deleteProduct = await conn.query(`DELETE FROM products WHERE id=?`, req.body.idDelete);
-        res.redirect('/shop.html');
+        // res.redirect('/shop.html');
     }
 }
