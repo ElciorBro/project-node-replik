@@ -171,6 +171,27 @@ function createProductCard(product) {
   addButton.className = 'btn btn-success btn-sm';
   addButton.textContent = 'Agregar al Carrito';
 
+  // Crear sección de "Eliminar"
+  const deleteForm = document.createElement('form');
+  deleteForm.innerHTML += `
+  <form action="/dinamic?_metodo=DELETE" style="display: flex;" method="post">
+    <input type="hidden" name="idDelete" value="${product.id}">
+    <button type="submit" class="btn btn-danger btn-sm">Eliminar Producto</button>
+  </form>`
+  // deleteForm.setAttribute('action', '/dinamic?_metodo=DELETE');
+  // deleteForm.setAttribute('method', 'post');
+  // let deleteId = document.createElement('input');
+  // deleteId.setAttribute('type', 'hidden');
+  // deleteId.setAttribute('name', 'idDelete');
+  // deleteId.setAttribute('value', product.id);
+  // const deleteButton = document.createElement('button');
+  // deleteButton.className = 'btn btn-danger btn-sm';
+  // deleteButton.setAttribute('type', 'submit')
+  // deleteButton.textContent = 'Eliminar Producto';
+  // deleteForm.appendChild(deleteId);
+  // deleteForm.appendChild(deleteButton);
+
+
   // Añadir los elementos al cuerpo de la card
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardText);
@@ -178,6 +199,7 @@ function createProductCard(product) {
   cardBody.appendChild(cardRating);
   cardBody.appendChild(viewButton);
   cardBody.appendChild(addButton);
+  cardBody.appendChild(deleteForm)
 
   // Añadir la imagen y el cuerpo a la card
   cardDiv.appendChild(img);
