@@ -5,12 +5,17 @@ const rutas = require(`./src/route/mainRoutes`);
 
 const port = 8080 || 3000 || process.env.PORT;
 
-// app.set('view engine', 'ejs');
-// app.set('views', (__dirname + '/src/views'))
+app.set('view engine', 'ejs');
+app.set('views', (__dirname + '/src/views'));
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: true}));
 app.use(override('_metodo'));
+
+app.use((req, res, next) => {
+    console.log('Método después de override:', req.method);
+    next();
+});
 
 app.use('/', rutas);
 
@@ -21,3 +26,7 @@ app.use((req, res, next) => {
 })
 
 app.listen(port, ()=> console.log(`Servidor funcionando en puerto: ${port}`))
+
+
+
+

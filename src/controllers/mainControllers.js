@@ -23,8 +23,31 @@ module.exports = {
     },
 
     deleteProduct: async (req, res) => {
-        console.log(req.body);
+        console.log('Método de solicitud:', req.method);
+        console.log('Body de la solicitud:', req.body);
         const deleteProduct = await conn.query(`DELETE FROM products WHERE id=?`, req.body.idDelete);
-        // res.redirect('/shop.html');
+        res.redirect('/shop.html');
+    },
+
+    getUpdate: async (req, res) => {
+        const [update] = await conn.query(`SELECT * FROM products WHERE id=?`, req.params.num);
+        
+        res.render('updateProduct', {
+            title: 'modify',
+            product: update[0]
+        })
+    },
+
+    update: async (req, res) => {
+        const sql = `UPDATE products SET title=?, category=?, description=?, available=?, calification=?, price=? WHERE id = ?`;
+        console.log(req.body);
+    
+        const { updateId, updateTitle, updateCategory, updateCalification, updateDescription, updateAvailable, updatePrice } = req.body;
+    
+        const modified = await conn.query(sql, [
+            updateTitle, updateCategory, updateDescription, parseFloat(updateAvailable), parseFloat(updateCalification), parseFloat(updatePrice), parseFloat(updateId)
+        ]);
+    
+        res.redirect('/shop.html');
     }
 }

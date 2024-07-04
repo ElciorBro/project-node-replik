@@ -158,7 +158,7 @@ function createProductCard(product) {
 
   // Crear el botón "Ver Producto"
   const viewButton = document.createElement('a');
-  viewButton.href = '#';
+  viewButton.href = `#`;
   viewButton.className = 'btn btn-primary btn-sm';
   viewButton.id = 'product-button';
   viewButton.textContent = 'Ver Producto';
@@ -166,17 +166,31 @@ function createProductCard(product) {
     viewButton.classList.add('seleccionado')
   })
 
+  // Seccion Update Product
+  const updateForm = document.createElement('div');
+  updateForm.innerHTML += `
+  <form action="/actualizar/${product.id}" style="display: flex;" method="post">
+    <input type="hidden" name="productId" value="${product.id}">
+    <input type="hidden" name="productTitle" value="${product.title}">
+    <input type="hidden" name="productCategory" value="${product.category}">
+    <input type="hidden" name="productDescription" value="${product.description}">
+    <input type="hidden" name="productAvailable" value="${product.available}">
+    <input type="hidden" name="productCalification" value="${product.calification}">
+    <button class="btn btn-primary btn-sm"><a href=/actualizar/${product.id}>Modificar Productos</a></button>
+  </form>`
+
+
   // Crear el botón "Agregar al Carrito"
   const addButton = document.createElement('button');
   addButton.className = 'btn btn-success btn-sm';
   addButton.textContent = 'Agregar al Carrito';
 
   // Crear sección de "Eliminar"
-  const deleteForm = document.createElement('form');
+  const deleteForm = document.createElement('div');
   deleteForm.innerHTML += `
   <form action="/shop?_metodo=DELETE" style="display: flex;" method="post">
     <input type="hidden" name="idDelete" value="${product.id}">
-    <button type="submit" class="btn btn-danger btn-sm">Eliminar Producto</button>
+    <input type="submit" class="btn btn-danger btn-sm" value="Eliminar Productos">
   </form>`
   // deleteForm.setAttribute('action', '/dinamic?_metodo=DELETE');
   // deleteForm.setAttribute('method', 'post');
@@ -199,7 +213,8 @@ function createProductCard(product) {
   cardBody.appendChild(cardRating);
   cardBody.appendChild(viewButton);
   cardBody.appendChild(addButton);
-  cardBody.appendChild(deleteForm)
+  cardBody.appendChild(deleteForm);
+  cardBody.appendChild(updateForm)
 
   // Añadir la imagen y el cuerpo a la card
   cardDiv.appendChild(img);
@@ -212,7 +227,7 @@ function createProductCard(product) {
 }
 
 async function renderProductCards() {
-  const res = await fetch(`http://localhost:8080/shop`);
+  const res = await fetch(`/shop`);
   const products = await res.json();
 
   const container = document.getElementById('card-container');

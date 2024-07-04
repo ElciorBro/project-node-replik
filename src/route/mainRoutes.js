@@ -22,4 +22,9 @@ router.post('/shop', uploadFile.single('image'), controladores.crearProducto);
 
 router.delete('/shop', controladores.deleteProduct);
 
+router.get('/actualizar/:num' ,controladores.getUpdate);
+
+router.patch('/actualizar', controladores.update);
+
+
 module.exports = router;
