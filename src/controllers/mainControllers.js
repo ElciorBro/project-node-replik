@@ -17,7 +17,7 @@ module.exports = {
         // console.log(req.body)
         // console.log(req.file)
         // console.log(req)
-        const creado = await conn.query(sql, [req.body.title, req.body.category, req.body.description, parseFloat(req.body.price), "IMG/productAdded/imagen_" + req.file.originalname, parseFloat(req.body.available), parseFloat(req.body.calification)])
+        const creado = await conn.query(sql, [req.body.title, req.body.category, req.body.description, parseFloat(req.body.price), "img/productAdded/imagen_" + req.file.originalname, parseFloat(req.body.available), parseFloat(req.body.calification)])
 
         res.redirect('/shop.html')
     },

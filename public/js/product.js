@@ -4,7 +4,7 @@ const products = [
       category: 'Café',
       description: 'Café 100% colombiano, con aroma y sabor característicos.',
       price: '1200',
-      image: 'IMG/coffe-product1.jpg',
+      image: 'img/coffe-product1.jpg',
       available: 10,
       calification: 4.8
     },
@@ -13,7 +13,7 @@ const products = [
       category: 'Café',
       description: 'Café Espresso intenso y aromático, perfecto para empezar el día.',
       price: '1500',
-      image: 'IMG/cafe-espresso.jpg',
+      image: 'img/cafe-espresso.jpg',
       available: 8,
       calification: 4.5
     },
@@ -22,7 +22,7 @@ const products = [
       category: 'Café',
       description: 'Café Latte suave con leche vaporizada, ideal para disfrutar en cualquier momento.',
       price: '1800',
-      image: 'IMG/cafe-latte.jpg',
+      image: 'img/cafe-latte.jpg',
       available: 6,
       calification: 4.7
     },
@@ -31,7 +31,7 @@ const products = [
       category: 'Té',
       description: 'Té verde orgánico con propiedades antioxidantes y refrescantes.',
       price: '900',
-      image: 'IMG/tea-green.jpg',
+      image: 'img/tea-green.jpg',
       available: 15,
       calification: 4.2
     },
@@ -40,7 +40,7 @@ const products = [
       category: 'Té',
       description: 'Té negro aromatizado con bergamota, para un sabor único y clásico.',
       price: '1000',
-      image: 'IMG/tea-earl-grey.jpg',
+      image: 'img/tea-earl-grey.jpg',
       available: 12,
       calification: 4.6
     },
@@ -49,7 +49,7 @@ const products = [
       category: 'Comestible',
       description: 'Deliciosas galletas de chocolate con trozos de chocolate belga.',
       price: '800',
-      image: 'IMG/cookies-chocolate.jpg',
+      image: 'img/cookies-chocolate.jpg',
       available: 20,
       calification: 4.9
     },
@@ -58,7 +58,7 @@ const products = [
       category: 'Comestible',
       description: 'Pastel húmedo de zanahoria con crema de queso, irresistible.',
       price: '1800',
-      image: 'IMG/cake-carrot.jpg',
+      image: 'img/cake-carrot.jpg',
       available: 5,
       calification: 4.4
     },
@@ -67,7 +67,7 @@ const products = [
       category: 'Comestible',
       description: 'Muffin esponjoso con arándanos frescos, para un antojo dulce.',
       price: '1200',
-      image: 'IMG/muffin-blueberry.jpg',
+      image: 'img/muffin-blueberry.jpg',
       available: 8,
       calification: 4.7
     },
@@ -76,7 +76,7 @@ const products = [
       category: 'Café',
       description: 'Café frío con hielo y un toque de sirope, refrescante y delicioso.',
       price: '2000',
-      image: 'IMG/cafe-cold-brew.jpg',
+      image: 'img/cafe-cold-brew.jpg',
       available: 4,
       calification: 4.3
     },
@@ -85,7 +85,7 @@ const products = [
       category: 'Café',
       description: 'Café Mocha con chocolate y crema batida, una delicia indulgente.',
       price: '2200',
-      image: 'IMG/cafe-mocha.jpg',
+      image: 'img/cafe-mocha.jpg',
       available: 7,
       calification: 4.6
     },
@@ -94,7 +94,7 @@ const products = [
       category: 'Comestible',
       description: 'Croissant hojaldrado relleno de chocolate suave y fundente.',
       price: '1500',
-      image: 'IMG/croissant-chocolate.jpg',
+      image: 'img/croissant-chocolate.jpg',
       available: 10,
       calification: 4.8
     },
@@ -103,7 +103,7 @@ const products = [
       category: 'Comestible',
       description: 'Tostadas de aguacate fresco con tomate y especias, opción saludable y deliciosa.',
       price: '1600',
-      image: 'IMG/toast-avocado.jpg',
+      image: 'img/toast-avocado.jpg',
       available: 6,
       calification: 4.5
     },
@@ -112,7 +112,7 @@ const products = [
       category: 'Café',
       description: 'Capuchino cremoso con espuma de leche y un toque de canela.',
       price: '1900',
-      image: 'IMG/capuccino.jpg',
+      image: 'img/capuccino.jpg',
       available: 9,
       calification: 4.7
     }
